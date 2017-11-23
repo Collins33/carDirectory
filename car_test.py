@@ -17,6 +17,13 @@ class TestCar(unittest.TestCase):
         self.assertEqual(self.new_car.price,"200000")
 
 
+    #test if objects are saved well
+    def test_save_car(self):
+        self.new_car.saveCar()#method to save the new car to the vehicles list
+
+        self.assertEqual(len(Car.vehicles),1)
+
+
 
 
 

@@ -8,3 +8,9 @@ class Car:
         self.year=year
         self.color=color
         self.price=price
+
+
+    #method to save car objects into vehicles
+    def saveCar(self):
+        #appends new object into the list
+        Car.vehicles.append(self)
