@@ -12,7 +12,7 @@ class TestCar(unittest.TestCase):
     def tearDown(self):
         #this is run after every test
         #it clears the vehicles list everytime
-        Car.vehicles=[]    
+        Car.vehicles=[]
 
     #check if object was initialized
     def test_init(self):
@@ -36,6 +36,18 @@ class TestCar(unittest.TestCase):
         test_car.saveCar()
 
         self.assertEqual(len(Car.vehicles),2)
+
+    #test if you can delete an objects
+    def test_delete_car(self):
+        self.new_car.saveCar()
+        #create new objects
+        test_car=Car("Escalade","2012","black","1000000")
+        test_car.saveCar()
+
+        self.new_car.deleteCar()#delete created object
+
+        self.assertEqual(len(Car.vehicles),1)
+
 
 
 

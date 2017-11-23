@@ -14,3 +14,7 @@ class Car:
     def saveCar(self):
         #appends new object into the list
         Car.vehicles.append(self)
+
+    #method to delete car object from list
+    def deleteCar(self):
+        Car.vehicles.remove(self)    
