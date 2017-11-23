@@ -33,4 +33,8 @@ class Car:
             if car.model == model:
                 return True
 
-        return False        
+        return False
+
+    @classmethod
+    def displayCars(cls):
+        return cls.vehicles            

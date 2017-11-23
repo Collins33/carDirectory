@@ -67,7 +67,11 @@ class TestCar(unittest.TestCase):
 
         carExists=Car.carExist("Escalade")
 
-        self.assertTrue(carExists)    
+        self.assertTrue(carExists)
+
+    #test if i can return a list of cars
+    def test_car_display_all_cars(self):
+        self.assertEqual(Car.displayCars(),Car.vehicles)        
 
 
 
