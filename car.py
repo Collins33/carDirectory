@@ -17,4 +17,11 @@ class Car:
 
     #method to delete car object from list
     def deleteCar(self):
-        Car.vehicles.remove(self)    
+        Car.vehicles.remove(self)
+
+    #find car based on model name
+    @classmethod
+    def findByModel(cls,model):
+        for car in cls.vehicles:
+            if car.model == model:
+                return car        

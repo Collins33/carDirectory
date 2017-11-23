@@ -48,6 +48,18 @@ class TestCar(unittest.TestCase):
 
         self.assertEqual(len(Car.vehicles),1)
 
+    #test if you can find a car by the model
+    def test_find_car_by_model(self):
+        self.new_car.saveCar()
+        #create new objects
+        test_car=Car("Escalade","2012","black","1000000")
+        test_car.saveCar()
+
+        foundCar=Car.findByModel("Escalade")
+        self.assertEqual(foundCar.model,test_car.model)
+
+
+
 
 
 
