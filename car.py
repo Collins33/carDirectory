@@ -24,4 +24,13 @@ class Car:
     def findByModel(cls,model):
         for car in cls.vehicles:
             if car.model == model:
-                return car        
+                return car
+
+
+    @classmethod
+    def carExist(cls,model):
+        for car in cls.vehicles:
+            if car.model == model:
+                return True
+
+        return False        

@@ -58,6 +58,17 @@ class TestCar(unittest.TestCase):
         foundCar=Car.findByModel("Escalade")
         self.assertEqual(foundCar.model,test_car.model)
 
+    #test if a car exists
+    def test_car_exists(self):
+        self.new_car.saveCar()
+        #create new objects
+        test_car=Car("Escalade","2012","black","1000000")
+        test_car.saveCar()
+
+        carExists=Car.carExist("Escalade")
+
+        self.assertTrue(carExists)    
+
 
 
 
