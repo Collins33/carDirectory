@@ -9,6 +9,11 @@ class TestCar(unittest.TestCase):
         #It will be creating a new object
         self.new_car = Car("Nissan","2007","blue","200000")
 
+    def tearDown(self):
+        #this is run after every test
+        #it clears the vehicles list everytime
+        Car.vehicles=[]    
+
     #check if object was initialized
     def test_init(self):
         self.assertEqual(self.new_car.model,"Nissan")
@@ -22,6 +27,17 @@ class TestCar(unittest.TestCase):
         self.new_car.saveCar()#method to save the new car to the vehicles list
 
         self.assertEqual(len(Car.vehicles),1)
+
+    #test if you can save multiple objects
+    def test_save_multiple_cars(self):
+        self.new_car.saveCar()
+        #create new objects
+        test_car=Car("Escalade","2012","black","1000000")
+        test_car.saveCar()
+
+        self.assertEqual(len(Car.vehicles),2)
+
+
 
 
 
